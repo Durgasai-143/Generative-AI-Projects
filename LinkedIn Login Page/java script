@@ -1,0 +1,14 @@
+function login() {
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var username = document.getElementById("username").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var password = document.getElementById("password").value;
+
+    // Add your authentication logic here
+    // For a simple example, just alert the entered credentials
+    alert("First Name: " + firstName + "\nLast Name: " + lastName + "\nUsername/Email: " + username + "\nPhone Number: " + phoneNumber + "\nPassword: " + password);
+
+    // Reset the form
+    document.getElementById("loginForm").reset();
+}
