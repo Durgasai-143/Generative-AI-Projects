@@ -1,0 +1,39 @@
+<head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+           <a href="https://ibb.co/gdQBBLG"><img src="https://i.ibb.co/T1JFFxZ/Linkedin-logo-png.png" alt="Linkedin-logo-png" border="0">
+        </div>
+        <form id="loginForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="username">Username or Email:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+            <label for="password">Create Password:</label>
+            <input type="password" id="password" name="password" required>
+   <label for="password">Confirm Password:</label>
+            <input type="password" id="password" name="password" required>
+
+          <button type="button" onclick="login()"><reset>Sign In</reset></button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
