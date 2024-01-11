@@ -1,0 +1,17 @@
+function login() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Perform authentication logic here
+    console.log('Logging in with:', username, password);
+}
+
+function forgotPassword() {
+    // Implement forgot password logic
+    console.log('Forgot Password clicked');
+}
+
+function signUp() {
+    // Implement sign up logic
+    console.log('Sign Up clicked');
+}
