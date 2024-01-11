@@ -1,0 +1,73 @@
+const words = ['hangman', 'javascript', 'developer', 'programming', 'openai', 'html', 'css', 'coding'];
+let chosenWord = '';
+let guessedWord = [];
+let incorrectGuesses = [];
+
+// Selects a random word from the array
+function selectRandomWord() {
+    return words[Math.floor(Math.random() * words.length)];
+}
+
+// Initializes a new game
+function newGame() {
+    chosenWord = selectRandomWord().toUpperCase();
+    guessedWord = Array(chosenWord.length).fill('_');
+    incorrectGuesses = [];
+
+    updateDisplay();
+    resetFeedback();
+}
+
+// Updates the display with the current game state
+function updateDisplay() {
+    document.getElementById('word-container').innerText = guessedWord.join(' ');
+    document.getElementById('incorrect-guesses').innerText = incorrectGuesses.join(', ');
+}
+
+// Resets feedback messages
+function resetFeedback() {
+    document.getElementById('feedback-container').innerText = '';
+}
+
+// Handles a user's guess
+function handleGuess(guess) {
+    guess = guess.toUpperCase();
+
+    if (chosenWord.includes(guess)) {
+        for (let i = 0; i < chosenWord.length; i++) {
+            if (chosenWord[i] === guess) {
+                guessedWord[i] = guess;
+            }
+        }
+    } else {
+        if (!incorrectGuesses.includes(guess)) {
+            incorrectGuesses.push(guess);
+        }
+    }
+
+    updateDisplay();
+    checkGameStatus();
+}
+
+// Checks if the game is won or lost
+function checkGameStatus() {
+    if (guessedWord.join('') === chosenWord) {
+        document.getElementById('feedback-container').innerText = 'Congratulations! You won!';
+    } else if (incorrectGuesses.length >= 6) {
+        document.getElementById('feedback-container').innerText = 'Sorry! You lost. The word was ' + chosenWord;
+    }
+}
+
+// Event listener for the New Game button
+document.getElementById('new-game-btn').addEventListener('click', newGame);
+
+// Event listener for key presses
+document.addEventListener('keydown', (event) => {
+    const key = event.key.toUpperCase();
+    if (/^[A-Z]$/.test(key)) {
+        handleGuess(key);
+    }
+});
+
+// Initialize a new game on page load
+newGame();
