@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #3494e6, #ec6ead);
+}
+
+#hangman-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#word-container {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#guesses-container {
+    margin-bottom: 20px;
+}
+
+#incorrect-guesses {
+    font-weight: bold;
+    color: red;
+}
+
+#feedback-container {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: green;
+}
+
+#new-game-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#new-game-btn:hover {
+    background-color: #45a049;
+}
